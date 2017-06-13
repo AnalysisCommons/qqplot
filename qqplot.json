@@ -1,0 +1,119 @@
+{
+  "document_name": "Analysis Common App: qqplot",
+  "app_name": "app_qqplot.json",
+  "maintainer": "",
+  "maintainer_email": "",
+  "location": "Common_Tools/",
+  "summary": "",
+  "tags": [""],
+  "version": "",
+  "introSpec": {
+	  "app_purpose": "",
+	  "app_use_cases": "",
+	  "app_requirements": "",
+	  "app_output": "",
+	  "app_how_does_it_work": ""
+	},
+  "inputSpec": [
+    {
+      "common": [
+        {
+          "name": "datafile",
+          "class": "array:file",
+          "label": "",
+          "optional": "False",
+          "details": ""
+        },
+        {
+          "name": "label",
+          "class": "string",
+          "label": "Label",
+          "optional": "False",
+          "details": ""
+        },
+        {
+          "name": "output_type",
+          "class": "string",
+          "label": "The filetype of the output plot. Must choose 'png', 'tiff', or 'pdf'",
+          "optional": "False",
+          "details": ""
+        },
+        {
+          "name": "p_col",
+          "class": "string",
+          "label": "P-value column name. Must be the same if plotting multiple datasets (e.g. merging chromosomes)",
+          "optional": "False",
+          "details": ""
+        },
+        {
+          "name": "filter",
+          "class": "string",
+          "label": "String: The threshold to apply to the filtering column. Eg. 'maf>0.05' or 'MAC>7'",
+          "optional": "False",
+          "details": ""
+        },
+        {
+          "name": "use_gc_lambda",
+          "class": "boolean",
+          "label": "Print the GC Lambda value",
+          "optional": "False",
+          "details": ""
+        },
+        {
+          "name": "include_ci",
+          "class": "boolean",
+          "label": "Include the confidence interval in this plot?",
+          "optional": "False",
+          "details": ""
+        },
+        {
+          "name": "qq_color",
+          "class": "array:string",
+          "label": "The color of points in the QQ plot.",
+          "optional": "False",
+          "details": ""
+        },
+        {
+          "name": "qq_color_criteria",
+          "class": "string",
+          "label": "Color filtering criteria: Color all points identified by a given criterion (eg. 'maf<0.05') with a specified color. Multiple criteria may be used as long as you give an equal amount of color names in the parameter above.",
+          "optional": "False",
+          "details": ""
+        },
+        {
+          "name": "highlight ",
+          "class": "array:string",
+          "label": "Highlighted Areas: A list of names from your 'gene' column to highlight, for example 'gene1,gene2,gene3'",
+          "optional": "False",
+          "details": ""
+        },
+      ]
+    },
+    {
+      "advanced": [
+	    {
+          "name": "",
+		  "class": "",
+		  "label": "",
+		  "optional": "False",
+		  "details": ""
+	    }
+	  ]
+    }
+  ],
+  "outputSpec": [
+    {
+    {
+      "name": "qqplot",
+	  "class": "array:file",
+	  "label": "",
+	  "details": ""
+    }	
+  ],
+  "runSpec": {
+    "details": ""
+  },
+  "cmdLineSpec": {
+    "details": ""
+  }
+}
