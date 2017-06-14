@@ -1,0 +1,108 @@
+{
+  "name": "qqplot",
+  "title": "qqplot",
+  "summary": "This applet generates a qq plot from the input p-value data.",
+  "dxapi": "1.0.0",
+  "inputSpec": [
+    {
+      "name": "datafile",
+      "class": "array:file",
+      "patterns": ["*.Rda", "*.txt", "*.csv", "*.txt.gz", "*.csv.gz"],
+      "optional": false
+    },
+    {
+      "name": "label",
+      "label": "Label",
+      "class": "string",
+      "optional": true,
+      "default": "test"
+    },
+    {
+      "name": "output_type",
+      "label": "The filetype of the output plot. Must choose 'png', 'tiff', or 'pdf'.",
+      "class": "string",
+      "optional": true,
+      "default": "png",
+      "choices": [
+        "png",
+        "tiff",
+        "pdf"
+      ]
+    },
+    {
+      "name": "p_col",
+      "label": "The name your p-value column in the dataset. Must be the same if plotting multiple datasets (e.g. merging chromosomes).",
+      "class": "string",
+      "optional": true,
+      "default": "p"
+    },
+    {
+      "name": "filter",
+      "label": "String: The threshold to apply to the filtering column. Eg. 'maf>0.05' or 'MAC>7'",
+      "class": "string",
+      "optional": true,
+      "default": "FALSE"
+    },
+    {
+      "name": "use_gc_lambda",
+      "label": "Print the GC Lambda value?",
+      "class": "boolean",
+      "optional": true,
+      "default": true
+    },
+    {
+      "name": "include_ci",
+      "label": "Include the confidence interval in this plot?",
+      "class": "boolean",
+      "optional": true,
+      "default": true
+    },
+    {
+      "name": "qq_color",
+      "label": "The color of points in the QQ plot.",
+      "class": "array:string",
+      "optional": true,
+      "default": [
+        "blue"
+      ]
+    },
+    {
+      "name": "qq_color_criteria",
+      "label": "Color filtering criteria: Color all points identified by a given criterion (eg. 'maf<0.05') with a specified color. Multiple criteria may be used as long as you give an equal amount of color names in the parameter above.",
+      "class": "array:string",
+      "optional": true,
+      "default": [
+        "FALSE"
+      ]
+    }
+  ],
+  "outputSpec": [
+    {
+      "name": "qqplots",
+      "label": "qqplots",
+      "class": "array:file"
+    }
+  ],
+  "runSpec": {
+    "systemRequirements": {
+      "process": {
+        "instanceType": "mem3_ssd1_x2"
+      },
+      "main": {
+        "instanceType": "mem3_ssd1_x2"
+      },
+      "*": {
+        "instanceType": "mem3_ssd1_x2"
+      }
+    },
+    "file": "src/code.sh",
+    "interpreter": "bash"
+  },
+  "access": {
+    "project": "CONTRIBUTE",
+    "allProjects": "CONTRIBUTE",
+    "network": [
+      "*"
+    ]
+  }
+}
